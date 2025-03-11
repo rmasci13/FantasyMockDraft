@@ -1,0 +1,60 @@
+Should I add HashMap with available players index in the List for constant lookup
+
+Current Spot and Rounds needs work for the draftboard to work
+
+Objects:
+    Player Object {
+        Stores:
+            Name
+            Position 
+            Team 
+            Ranking
+            Base Value points
+            Modified Value points (based on team needs)
+            isDrafted
+        Function:
+            displayInfo
+    }
+    Team Object {
+        Stores: 
+            Team Name
+            isHuman
+            vector<Player> roster
+            unordered_map<position, int> count of each position 
+                Initialize all positions and set their int to 0. Then maybe having checks of if < 
+        Functions:
+            ModifyValuePoints() - should modify like the top 5 at each position and based on team need
+            PositionalNeeds()
+                based on the number drafted at each pos(the mapped value of pos) you can take that number then have a map for each position that moves the weighting
+                    so a QB would be {1, 0.8} (0 drafted means 1.0 weight, 1 drafted means 0.8 weight);
+                    WR/RB would be {1, 1, 0.9, 0.8, 0.8, etc}, keeps it high bc want them
+                    TE/DST {1, 0.6}
+            MaxAllowedAtPos()
+            DraftPlayer(player) -drafts highest rating after modification
+            displayInfo()
+    }
+    Draft Board Object {
+        Stores: 
+            vector of available players
+            vector of teams
+            Top 3 at each position in a vector
+            2D vector of the board itself that is filled snakewise, (does it need to be 2D or just 1D and a line)
+        Functions:
+            Get Players from file and Stores
+                In Java, id use a BufferedReader on FileReader object that takes filePath. 
+                While ((line = br.readLine()) != null) String[] columns = line.split(",");
+                if columns.length == 4, String name = columns[0]; String position = columns[1];.....
+                Would later then have to find a way to convert ranking into playerValue (maybe like int draftValue = (int) ((totalPlayers - player.getRanking()) * 1500.0 / totalPlayers);
+            Draft()
+                would for loop through the 1D vector, the team at the spot would call makePick(board), then inside would det if CPU or human pick 
+                    userPick()
+                        displayAvailablePlayers
+                        getInput() returning a player object, within it can do the ancillary functions
+                            displayTopAtPos, displayRoster, displayDrafted, display2DDraftBoard
+                        draftPlayer(number)
+                    aiPick()
+                        draftPlayer()
+            displayAvailablePLayers
+            displayAvailable at Pos
+            DisplayREsults
+    }
