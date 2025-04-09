@@ -1,6 +1,6 @@
 # # Fantasy Football Mock Draft Simulator
 
-A console-based application that simulates a fantasy football draft with intelligent CPU-controlled teams that adapt their picks based on team needs and roster construction.
+A console-based application that simulates a fantasy football draft with CPU-controlled teams that adapt their picks based on team needs and roster construction.
 
 ## Technologies
 - Java
@@ -9,9 +9,9 @@ A console-based application that simulates a fantasy football draft with intelli
 
 ## Features
 - Dynamic CPU drafting logic that adjusts player valuations
-- Real-time roster analysis that influences pick decisions
+- Real-time CPU roster analysis that influences simulation pick decisions
 - Position-based team needs calculation
-- CSV-based player database with fantasy projections
+- CSV-based player database with rankings
 
 ## Installation
 1. Clone this repository
