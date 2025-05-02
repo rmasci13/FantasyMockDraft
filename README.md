@@ -1,4 +1,4 @@
-## Fantasy Football Mock Draft Simulator
+# Fantasy Football Mock Draft Simulator
 
 A console-based application that simulates a fantasy football draft with CPU-controlled teams that adapt their picks based on team needs and roster construction.
 
